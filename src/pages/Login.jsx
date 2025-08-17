@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
 
 
-const Login = () => {
+const Login = ({setToken}) => {
+
+  let navigate = useNavigate();
+  
 
   const [formData,setFormData] = useState({
     email:'',
@@ -33,6 +36,8 @@ const { data, error } = await supabase.auth.signInWithPassword({
 })
 
 console.log(data)
+setToken(data)
+navigate('/homepage')
 // alert('Check your email for verification link')
 
  } catch (error) {
