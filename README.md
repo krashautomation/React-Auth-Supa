@@ -1,0 +1,1 @@
+# React Authentication for Supabase
