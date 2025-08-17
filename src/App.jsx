@@ -8,8 +8,16 @@ const App = () => {
     password:''
   })
 
+console.log(formData)
+
+
 function handleChange(event){
-   
+   setFormData(prevFormData=>{
+    return{
+      ...prevFormData,
+      [event.target.name]:event.target.value
+    }
+   })
 }
 
   return (
