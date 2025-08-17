@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
+
+  const [formData,setFormData] = useState({
+    fullName:'',
+    email:'',
+    password:''
+  })
 
 function handleChange(event){
    
@@ -19,6 +25,10 @@ onChange={handleChange}/>
       <input placeholder='Password'
       name='password'
       onChange={handleChange} />
+
+      <button type='submit'>
+Submit
+      </button>
       
     </form>
     </div>
